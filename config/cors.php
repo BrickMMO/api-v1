@@ -22,6 +22,7 @@ return [
     'allowed_origins' => [
         'https://brickmmo.com',
         'https://sandbox.brickmmo.com',
+        'http://localhost:3000'
     ],
 
     'allowed_origins_patterns' => [],
