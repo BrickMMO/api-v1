@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Models\Email;
 
-use App\Mail\Bio2024;
+use App\Mail\WebsiteContact;
 
 class EmailController extends Controller
 {
@@ -34,19 +34,12 @@ class EmailController extends Controller
 
         $data['name'] = $request->input('name');
         $data['email'] = $request->input('email');
+        $data['comments'] = $request->input('comments');
 
-        $email = new Bio2024($data);
-        $result = Mail::to('a.t@brevisrefero.com')->send($email);
+        $email = new WebsiteContact($data);
+        $result = Mail::to('brickmmo@gmail.com')->send($email);
+        // $messageId = $result->getSymfonySentMessage()->getMessageId();
 
-        $messageId = $result->getSymfonySentMessage()->getMessageId();
-
-        $email = new Email();
-        $email->to = 'a.t@brevisrefero.com';
-        $email->from = getenv('MAIL_FROM_ADDRESS');
-        $email->subject = 'BrickMMO at BIO 2024';
-        $email->sendgrid_id = $messageId;
-        $email->save();
-        
         return response()->json([
             'status' => 'success',
             'message' => 'Email has been sent successfully',

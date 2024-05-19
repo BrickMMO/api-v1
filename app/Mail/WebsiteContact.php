@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Bio2024 extends Mailable
+class WebsiteContact extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,7 +27,7 @@ class Bio2024 extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'BrickMMO at BIO 2024',
+            subject: 'BrickMMO Contact Form',
         );
     }
 
@@ -36,9 +36,8 @@ class Bio2024 extends Mailable
      */
     public function content(): Content
     {
-
         return new Content(
-            markdown: 'emails.bio2024',
+            markdown: 'emails.website.contact',
             with: $this->data,
         );
     }
