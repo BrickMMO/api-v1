@@ -20,10 +20,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'http://127.0.0.1:3030',
         'https://brickmmo.com',
         'https://sandbox.brickmmo.com',
-        '*'
     ],
 
     'allowed_origins_patterns' => [],
@@ -34,6 +32,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];

@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmailController;
 
-die('{"status":"success","message":"Email has been sent successfully"}');
+// die('{"status":"success","message":"Email has been sent successfully"}');
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,8 +23,8 @@ die('{"status":"success","message":"Email has been sent successfully"}');
 //     return $request->user();
 // });
 
-header('Access-Control-Allow-Origin: *'); 
-header("Access-Control-Allow-Credentials: true");
+// header('Access-Control-Allow-Origin: *'); 
+// header("Access-Control-Allow-Credentials: true");
 
 
 Route::controller(AuthController::class)->group(function () {
